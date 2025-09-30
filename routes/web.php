@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\BusinessController as DashboardBusinessController;
 use App\Http\Controllers\Dashboard\UrbanVillageController as DashboardUrbanVillageController;
 use App\Http\Controllers\Dashboard\UserController as DashboardUserController;
 use Illuminate\Support\Facades\Route;
@@ -33,4 +34,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/dashboard/kelurahan/tambah', [DashboardUrbanVillageController::class, 'store'])->middleware('throttle:10,5')->name('dashboard.urban-village.store');
     Route::put('/dashboard/kelurahan/{slug}/ubah', [DashboardUrbanVillageController::class, 'update'])->middleware('throttle:10,5')->name('dashboard.urban-village.update');
     Route::delete('/dashboard/kelurahan/{slug}/hapus', [DashboardUrbanVillageController::class, 'destroy'])->middleware('throttle:10,5')->name('dashboard.urban-village.destroy');
+
+    // Dashboard UMKM
+    Route::get('/dashboard/umkm', [DashboardBusinessController::class, 'index'])->name('dashboard.business.index');
+    Route::get('dashboard/umkm/pdf', [DashboardBusinessController::class, 'exportPdf'])->name('dashboard.business.pdf');
+    Route::post('/dashboard/umkm/tambah', [DashboardBusinessController::class, 'store'])->middleware('throttle:10,5')->name('dashboard.business.store');
+    Route::put('/dashboard/umkm/{id}/ubah', [DashboardBusinessController::class, 'update'])->middleware('throttle:10,5')->name('dashboard.business.update');
+    Route::delete('/dashboard/umkm/{id}/hapus', [DashboardBusinessController::class, 'destroy'])->middleware('throttle:10,5')->name('dashboard.business.destroy');
 });
