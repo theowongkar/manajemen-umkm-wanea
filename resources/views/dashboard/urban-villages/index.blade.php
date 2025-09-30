@@ -102,7 +102,7 @@
 
                 {{-- Pagination --}}
                 <div class="overflow-x-auto">
-                    {{ $urbanVillages->withQueryString()->links() }}
+                    {{ $urbanVillages->withQueryString()->links('pagination::custom') }}
                 </div>
             </div>
         </div>

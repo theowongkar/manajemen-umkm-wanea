@@ -41,8 +41,5 @@ class DatabaseSeeder extends Seeder
                 'slug' => Str::slug($urbanVillage),
             ]);
         }
-
-        // Buat 30 umkm
-        Business::factory(30)->create();
     }
 }

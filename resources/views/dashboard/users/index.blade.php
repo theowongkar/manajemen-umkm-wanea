@@ -106,7 +106,7 @@
 
                 {{-- Pagination --}}
                 <div class="overflow-x-auto">
-                    {{ $users->withQueryString()->links() }}
+                    {{ $users->withQueryString()->links('pagination::custom') }}
                 </div>
             </div>
         </div>
