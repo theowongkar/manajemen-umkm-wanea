@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\UserController as DashboardUserController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -19,4 +20,10 @@ Route::middleware('auth')->group(function () {
 
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Dashboard Pegawai
+    Route::get('/dashboard/user', [DashboardUserController::class, 'index'])->name('dashboard.user.index');
+    Route::post('/dashboard/user/tambah', [DashboardUserController::class, 'store'])->middleware('throttle:10,5')->name('dashboard.user.store');
+    Route::put('/dashboard/user/{nip}/ubah', [DashboardUserController::class, 'update'])->middleware('throttle:10,5')->name('dashboard.user.update');
+    Route::delete('/dashboard/user/{nip}/hapus', [DashboardUserController::class, 'destroy'])->middleware('throttle:10,5')->name('dashboard.user.destroy');
 });
