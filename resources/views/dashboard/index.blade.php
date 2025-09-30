@@ -6,10 +6,10 @@
     {{-- Bagian Statistik Card --}}
     <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         {{-- Total User --}}
-        <x-cards.status-card :count="$totalUsers" title="Jumlah User" subtitle="Jumlah user yang terdaftar" color="purple" />
+        <x-cards.status-card :count="$totalUsers" title="Jumlah User" subtitle="Jumlah user yang terdaftar" color="red" />
 
         {{-- Total UMKM --}}
-        <x-cards.status-card :count="$totalActiveBusinesses" title="Jumlah UMKM" subtitle="Jumlah UMKM yang aktif" color="green" />
+        <x-cards.status-card :count="$totalActiveBusinesses" title="Jumlah UMKM" subtitle="Jumlah UMKM yang aktif" color="red" />
         <x-cards.status-card :count="$totalInactiveBusinesses" title="Jumlah UMKM" subtitle="Jumlah UMKM yang tidak aktif"
             color="red" />
     </section>

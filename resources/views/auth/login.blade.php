@@ -15,8 +15,8 @@
 
             {{-- Logo Tulisan --}}
             <div class="text-center text-white font-bold mb-5">
-                <h2 class="text-2xl">Manajemen UMKM Wanea</h2>
-                <p class="text-sm mt-1 font-thin">Provinsi Sulawesi Utara</p>
+                <h2 class="text-2xl">UMKM Kecamatan Wanea</h2>
+                <p class="text-sm mt-1 font-thin">Kota Manado Provinsi Sulawesi Utara</p>
             </div>
 
             {{-- Form --}}
